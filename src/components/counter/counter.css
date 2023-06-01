@@ -1,0 +1,22 @@
+:root {
+  counter-reset: chapter;
+  counter-increment: chapter;
+}
+
+h1 {
+  counter-reset: headings2;
+}
+
+h2 {
+  counter-reset: headings3;
+}
+
+h2::before {
+  counter-increment: headings2;
+  content: counter(chapter) "." counter(headings2);
+}
+
+h3::before {
+  counter-increment: headings3;
+  content: counter(chapter) "." counter(headings2) "." counter(headings3) " ";
+}
